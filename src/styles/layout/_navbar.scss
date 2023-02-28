@@ -1,0 +1,70 @@
+@use '../abstracts/' as abs;
+.nav{
+    background-color: abs.$bg-color-secondary;
+    height: 80px;
+    border-bottom: 2px solid #000;
+
+    &__logo{
+        font-size: 1.5em;
+
+        &::before{
+            content: "<";
+        }
+        &::after{
+            content: "/>";
+        }
+    }
+
+    &__container{
+        display: flex;
+        height: 100%;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__label{
+        display:none;
+    }
+
+    &__menu{
+        display: grid;
+        grid-auto-flow: column;
+        gap: 3em;
+    }
+
+
+
+    &__item{
+        color: #000;
+        text-decoration: none;
+
+        &::after{
+            content: "";
+            display: block;
+            background: #000;
+            width: 90%;
+            margin-top: 3px;
+            height: 3px;
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            transition: clip-path .5s;
+        }
+
+        &:hover{
+            &::after{
+                content: "";
+                display: block;
+                background: #000;
+                width: 90%;
+                margin-top: 3px;
+                height: 3px;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+        }
+    }
+
+
+}
+

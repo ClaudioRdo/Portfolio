@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contact() {
     return (
-        <div>Contact</div>
+        <section className='container-skills'>Contact</section>
     )
 }
 

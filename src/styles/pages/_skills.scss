@@ -1,0 +1,5 @@
+@use '../abstracts/' as abs;
+
+.container-skills{
+    @include abs.container(abs.$bg-color-primary)
+}

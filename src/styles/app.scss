@@ -1,1 +1,10 @@
-@import './core/reset'
+@use './core/' as core;
+@use './abstracts/' as abs;
+
+
+//components
+@use './layout/' as ly;
+
+
+//Pages
+@use './pages/' as pg;

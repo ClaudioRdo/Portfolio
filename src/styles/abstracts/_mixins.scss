@@ -1,0 +1,15 @@
+@mixin container($bg){
+    height: 100vh;
+    display: flex;
+    background-color: $bg;
+}
+
+@mixin text-underline($op){
+    content: "";
+    display: block;
+    background: #000;
+    width: 90%;
+    margin-top: 3px;
+    height: 3px;
+    opacity: $op;
+}
