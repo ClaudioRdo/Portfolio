@@ -1,49 +1,96 @@
 @use '../abstracts/' as abs;
-.nav{
-    background-color: abs.$bg-color-secondary;
-    height: 80px;
-    border-bottom: 2px solid #000;
 
-    &__logo{
+.header {
+    width: 100%;
+    background-color: abs.$bg-color-secondary;
+    padding: 1em;
+    color: abs.$black;
+    border-bottom: 4px solid abs.$black;
+
+    @include abs.flex(row, wrap, space-between, center);
+
+    &__logo {
         font-size: 1.5em;
 
-        &::before{
+        &::before {
             content: "<";
         }
-        &::after{
+
+        &::after {
             content: "/>";
         }
     }
 
-    &__container{
-        display: flex;
-        height: 100%;
-        width: 90%;
-        margin: 0 auto;
-        justify-content: space-between;
-        align-items: center;
+    &__button {
+        display: none;
+        cursor: pointer;
+
+        @include abs.media() {
+            display: block;
+        }
+
     }
 
-    &__label{
-        display:none;
+    &__svg {
+        width: 2em;
+        height: 2em;
+        fill: white;
     }
 
-    &__menu{
-        display: grid;
-        grid-auto-flow: column;
-        gap: 3em;
+    &__nav {
+        @include abs.media() {
+
+            @include abs.flex(column, nowrap, center, center);
+            width: 100%;
+            opacity: 0;
+            height: 0vh;
+            overflow: hidden;
+            transition: all .5s ease;
+
+            &--isActive {
+                @include abs.flex(column, nowrap, center, center);
+                width: 100%;
+                opacity: 1;
+                height: 50vh;
+            }
+        }
+
+        // &__button {
+        //     display: flex
+        // }
+
+        // &__ul {
+        //     flex-direction: column;
+        // }
+
+        // &__li {
+        //     margin: .5em 0;
+        // }
     }
 
+    &__ul {
+        @include abs.flex(row, wrap, flex-end, center);
 
+        @include abs.media() {
+            flex-direction: column;
+            padding: 0;
+        }
+    }
 
-    &__item{
-        color: #000;
-        text-decoration: none;
+    &__li {
+        margin: 0 .5em;
+        list-style: none;
 
-        &::after{
+        @include abs.media() {
+            margin: 1em 0;
+        }
+
+        ;
+
+        &::after {
             content: "";
             display: block;
-            background: #000;
+            background: abs.$black;
             width: 90%;
             margin-top: 3px;
             height: 3px;
@@ -51,20 +98,23 @@
             transition: clip-path .5s;
         }
 
-        &:hover{
-            &::after{
+        &:hover {
+            &::after {
                 content: "";
                 display: block;
-                background: #000;
+                background: abs.$black;
                 width: 90%;
                 margin-top: 3px;
                 height: 3px;
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
-            
         }
+    }
+
+    &__a {
+        text-decoration: none;
+        color: abs.$black;
     }
 
 
 }
-
