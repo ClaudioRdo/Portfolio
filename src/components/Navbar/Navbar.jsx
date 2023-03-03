@@ -11,13 +11,13 @@ function Navbar() {
 
     const [menu, setMenu] = useState(false);
 
-    const toogleMenu = ():void => {
+    const toogleMenu = () => {
         setMenu(!menu);
         console.log('menu')
     }
 
     return (
-        <header className="header">
+        <div className="header">
             <h1 className="header__logo">
                 <a href="/" className="header__a">CR</a>
             </h1>
@@ -36,7 +36,7 @@ function Navbar() {
                     <li className="header__li"><a href="/" className="header__a">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
     )
 }
 
