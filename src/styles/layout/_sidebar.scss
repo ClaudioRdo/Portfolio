@@ -1,10 +1,47 @@
-.sidebar{
+@use '../abstracts' as abs;
+@use '../abstracts/variables' as var;
+
+.sidebar {
     position: fixed;
-    width: 2vw;
-    height: 100vh;
+    width: var.$size-md;
+    bottom: 0;
     background: red;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    z-index: 2;
+    z-index: 1;
+    @include abs.flex(column, nowrap, space-around, center);
+
+    @include abs.media() {
+        display: none;
+    }
+
+    &__focus{
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+
+    &__rrss {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+        &::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: var.$size-xs;
+            margin: 0 auto;
+            background-color: black;
+        }
+    }
+
+    &__icon{
+        &:last-of-type {
+            margin-bottom: 1em;
+        }
+        height: 1em;
+        width: 1em;
+
+    }
 }

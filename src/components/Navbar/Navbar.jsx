@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react'
+import Logo from './Logo';
 
 function Navbar() {
     
@@ -11,16 +12,14 @@ function Navbar() {
 
     const [menu, setMenu] = useState(false);
 
+
     const toogleMenu = () => {
         setMenu(!menu);
-        console.log('menu')
     }
 
     return (
         <div className="header">
-            <h1 className="header__logo">
-                <a href="/" className="header__a">CR</a>
-            </h1>
+            <Logo/>
 
             <button className="header__button" onClick= {toogleMenu}>
                 <svg className="header__svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

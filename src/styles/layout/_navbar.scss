@@ -2,32 +2,18 @@
 
 .header {
     width: 100%;
+    height: 5em;
     background-color: abs.$bg-color-secondary;
-    padding: 1em;
     color: abs.$black;
     text-transform: uppercase;
     border-bottom: 4px solid abs.$black;
-    position: fixed;
-    z-index: 1;
 
     @include abs.flex(row, wrap, space-between, center);
-
-    &__logo {
-        font-size: 1.5em;
-
-        &::before {
-            content: "< ";
-        }
-
-        &::after {
-            content: " />";
-        }
-    }
 
     &__button {
         display: none;
         cursor: pointer;
-
+        padding: 1em;
         @include abs.media() {
             display: block;
         }
@@ -41,6 +27,7 @@
     }
 
     &__nav {
+        padding: 1em;
         @include abs.media() {
 
             @include abs.flex(column, nowrap, center, center);
@@ -48,13 +35,16 @@
             opacity: 0;
             height: 0vh;
             overflow: hidden;
-            transition: all .5s ease;
+            
 
             &--isActive {
                 @include abs.flex(column, nowrap, center, center);
+                transition: all 1s ease;
                 width: 100%;
                 opacity: 1;
                 height: 50vh;
+                z-index: 1;
+                background-color: inherit;
             }
         }
     }

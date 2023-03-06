@@ -5,7 +5,7 @@ import { Navbar, Sidebar } from './components';
 
 function App() {
 	return (
-		<div className="App">
+		<div className="app">
 			<Navbar />
 			<Sidebar />
 			<Home />
