@@ -5,7 +5,7 @@
     position: fixed;
     width: var.$size-md;
     bottom: 0;
-    background: red;
+    background: transparent;
     z-index: 1;
     @include abs.flex(column, nowrap, space-around, center);
 
@@ -16,6 +16,7 @@
     &__focus{
         writing-mode: vertical-rl;
         text-orientation: upright;
+        margin-bottom: var.$size-md;
     }
 
     &__rrss {
